@@ -27,7 +27,7 @@
                     <input class="form-control" id="nomeUsuario" type="text" name="nomeUsuario"
                         placeholder="Digite seu nome completo">
                     <label for="cpfUsuario" class="mt-3"> CPF</label>
-                    <input class="form-control" id="cpfUsuario" type="text" name="cpfUsuario"
+                    <input class="form-control" id="cpfUsuario" maxlength=11 type="text" name="cpfUsuario"
                         placeholder="Digite somente numeros">
                     <label for="telefoneUsuario" class="mt-3"> Telefone</label>
                     <input class="form-control" id="telefoneUsuario" type="tel" name="telefoneUsuario"
@@ -49,10 +49,10 @@
                     <label for="cepUsuario"> Cep</label>
                     <input class="form-control" id="cepUsuario" type="text" name="cepUsuario"
                         placeholder="Digite somente numeros">
-                    <label for="enderecoUsuario" class="mt-3"> CEP</label>
+                    <label for="enderecoUsuario" class="mt-3"> Endereço</label>
                     <input class="form-control" id="enderecoUsuario" type="text" name="enderecoUsuario"
                         placeholder="Digite seu endereco">
-                    <label for="numeroCasaUsuario" class="mt-3"> Endereço</label>
+                    <label for="numeroCasaUsuario" class="mt-3"> numero</label>
                     <input class="form-control" id="numeroCasaUsuario" type="number" name="numeroCasaUsuario"
                         placeholder="Digite o numero da sua casa">
                     <label for="complementoCasaUsuario" class="mt-3"> Complemento</label>
@@ -69,29 +69,30 @@
                         </div>
                         <div class="col-6">
                             <label for="EstadoUsuario" class="mt-3"> UF</label>
-                            <select class = "form-control"name="EstadoUsuario" id="EstadoUsuario">
-                                    <option value=""selected disabled>Estado</option>
-                                    <option value="SP">SP</option>
-                                    <option value="RJ">RJ</option>
-                                    <option value="ES">ES</option>
+                            <select class="form-control" name="EstadoUsuario" id="EstadoUsuario">
+                                <option value="" selected disabled>Estado</option>
+                                <option value="SP">SP</option>
+                                <option value="RJ">RJ</option>
+                                <option value="ES">ES</option>
                             </select>
                         </div>
                     </div>
                     <div class="mt-3"> Selecione o tipo de Frete</div>
                     <div class="row mt-3">
                         <div class="col-6">
-                        <label for="freteRapido">Rapido R$50,00</label>
-                        <input id="freteRapido" type="radio" name="frete">
-                    </div><div class="col-6">
-                        <label for="freteNormal">Normal R$20,00 </label>
-                        <input id="freteNormal" type="radio" name="frete">
-                    </div>
+                            <label for="freteRapido">Rapido R$50,00</label>
+                            <input id="freteRapido" type="radio" name="frete">
+                        </div>
+                        <div class="col-6">
+                            <label for="freteNormal">Normal R$20,00 </label>
+                            <input id="freteNormal" type="radio" name="frete">
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <header class="bg-dark text-light p-2 text-center ">Pagamento</header>
-                <div class="mt-3 d-flex justify-content-center flex-column p-2"> 
+                <div class="mt-3 d-flex justify-content-center flex-column p-2">
                     <h4>Camiseta Branca</h4>
                     <p>R$20,00</p>
                 </div>
@@ -99,16 +100,17 @@
                     <label for="nCartao"> Número do cartão</label>
                     <input class="form-control" id="nCartaoUsuario" type="number" name="nCartaoUsuario"
                         placeholder="Digite o numero do cartão">
-                        <div class="row">
+                    <div class="row">
                         <div class="col-8">
-                    <label for="validadeCartao" class="mt-3"> Validade cartão</label>
-                    <input class="form-control" id="validadeCartao" type="month" name="validadeCartao"
-                        placeholder="validade">
-                    </div><div class="col-4">
-                        <label for="cvvCartao" class="mt-3"> CVV</label>
-                        <input class="form-control" id="cvvCartao" type="number" name="cvvCartao"
-                            placeholder="CVV">
-                    </div></div>
+                            <label for="validadeCartao" class="mt-3"> Validade cartão</label>
+                            <input class="form-control" id="validadeCartao" type="month" name="validadeCartao"
+                                placeholder="validade">
+                        </div>
+                        <div class="col-4">
+                            <label for="cvvCartao" class="mt-3"> CVV</label>
+                            <input class="form-control" id="cvvCartao" type="number" name="cvvCartao" placeholder="CVV">
+                        </div>
+                    </div>
 
                     <label for="titularCartao" class="mt-3"> Nome do Titular</label>
                     <input class="form-control" id="titularCartao" type="text" name="titularCartao"
@@ -117,17 +119,35 @@
                     <input class="form-control" id="cpfTitular" type="text" name="cpfTitular"
                         placeholder="Digite somente números">
                     <div class=" mt-3">
-                        <button class="form-control btn btn-outline-dark" type="submit">Enviar</button>
+                        <button class="form-control btn btn-outline-dark" type="button" data-toggle="modal"
+                            data-target="#compraFinalizada">Confirmar</button>
                     </div>
-                        
-            </div>
+
+                </div>
 
         </form>
 
     </main>
 
 
-
+    <div id="compraFinalizada" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Compra realizada com sucesso! title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Uhull <br> parabens pela sua compra</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">show</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -138,6 +158,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script src="JS/code.js"></script>
 </body>
 
 </html>

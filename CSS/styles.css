@@ -1,0 +1,16 @@
+.erro{
+    border-color: red;
+}
+.sucesso{
+    border-color: green;
+}
+.erro:focus{
+    outline-color: red;
+    box-shadow: 0 0 10px 0;
+    scrollbar-shadow-color: red;
+}
+.sucesso:focus{
+    outline-color: green;
+    box-shadow: 0 0 10px 0;
+    scrollbar-shadow-color: green;
+}
